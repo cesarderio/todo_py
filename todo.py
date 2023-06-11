@@ -10,27 +10,26 @@ def show_menu():
     print("5. Exit")
     print()
 
+# print tasks
+def print_tasks():
+    if not tasks:
+        print("No tasks found.")
+    else:
+        print("Tasks:")
+        for index, task in enumerate(tasks, start=1):
+            print(f"{index}. {task}")
+
 # add a new task
 def add_task():
     task = input("Enter the task: ")
     tasks.append(task)
     save_tasks()
     print("Task added successfully!")
-    print()
-    print("Tasks:")
-    for index, task in enumerate(tasks, start=1):
-        print(f"{index}. {task}")
+    print_tasks()
 
 # view all the tasks
 def view_tasks():
-    if not tasks:
-        print()
-        print("No tasks found.")
-    else:
-        print()
-        print("Tasks:")
-        for index, task in enumerate(tasks, start=1):
-            print(f"{index}. {task}")
+    print_tasks()
 
 # mark task as complete
 def mark_task_complete():
@@ -52,9 +51,13 @@ def delete_task():
     try:
         task_index = int(input("Enter the task number to delete: ")) - 1
         if 0 <= task_index < len(tasks):
-            tasks.pop(task_index)
-            save_tasks()
-            print("Task deleted.")
+            confirmation = input("Are you sure you want to delete this task? (y/n): ")
+            if confirmation.lower() == 'y':
+                tasks.pop(task_index)
+                save_tasks()
+                print("Task deleted.")
+            else:
+                print("Deletion canceled.")
         else:
             print("Invalid task number.")
     except ValueError:
@@ -87,14 +90,25 @@ def load_tasks():
         except IOError:
             print("Error occurred while creating the task file.")
 
+# clear the console screen
+def clear_screen():
+    if os.name == 'nt':  # for Windows
+        os.system('cls')
+    else:  # for Unix/Linux/Mac
+        os.system('clear')
+
 # Main 
 file_path = 'tasks.txt'
 tasks = []
 load_tasks()
 
+print("Welcome to the Todo App!")
+
 while True:
     show_menu()
     choice = input("Enter your choice (1-5): ")
+
+    clear_screen()
 
     if choice == "1":
         add_task()
