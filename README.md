@@ -4,11 +4,11 @@ The Python Todo App is a simple command-line application that allows you to mana
 
 ## Features
 
-- Add tasks: You can add new tasks to the todo list.
-- View tasks: You can view all the tasks in the todo list.
-- Mark tasks as complete: You can mark tasks as complete and remove them from the todo list.
-- Delete tasks: You can delete tasks from the todo list.
-- Persistence: The tasks are saved to a file, allowing you to resume your work across sessions.
+- ***Add tasks***: You can add new tasks to the todo list.
+- ***View tasks***: You can view all the tasks in the todo list.
+- ***Mark tasks***: as complete: You can mark tasks as complete and remove them from the todo list.
+- ***Delete tasks***: You can delete tasks from the todo list.
+- ***Persistence***: The tasks are saved to a file, allowing you to resume your work across sessions.
 
 ## Requirements
 
@@ -50,15 +50,15 @@ The Python Todo App is a simple command-line application that allows you to mana
 6. Run the application:
 
   ```bash
-  python3 todo.py
+  python3 main.py
 
 
 ## Usage
 
-1. Launch the application by running python app.py.
-2. You will see a main menu with options to add, view, mark as complete, and delete tasks.
+1. Launch the application by running python main.py.
+2. You will see a main menu with options to add, mark as complete, and delete tasks.
 3. Enter the corresponding number for the desired action and follow the prompts.
-4. To exit the application, choose the "Exit" option in the main menu.
+4. To exit the application, click on the "x" close window at the top corner of the window.
 
 ## Contributing
 

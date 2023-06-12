@@ -1,3 +1,5 @@
+dishes
+apple
+blammo
+bread
 laundry
-car wash
-sleep
